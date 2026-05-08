@@ -1,0 +1,1059 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>NLS Media - Premium Concert Photography</title>
+
+    <meta name="description" content="NLS Media offers premium concert and live event photography, capturing the energy of festivals and performances worldwide. Professional photography services for artists, venues, and festivals.">
+    <meta name="keywords" content="concert photography, live event photography, festival photographer, music photography, NLS Media, concert photos, concert pictures, event photos, event pictures, band photography, event photographer, event photography, professional concert photographer">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #b0b0b0;
+            background: #0f0f0f;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: rgba(15, 15, 15, 0.97);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid rgba(255, 107, 53, 0.15);
+        }
+
+        header h1 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fff, #ff6b35);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            flex-shrink: 0;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .header-nav a {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 8px 0;
+            border: none;
+            background: none;
+            border-radius: 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff6b35;
+            transition: width 0.25s ease;
+        }
+
+        .header-nav a:hover {
+            color: #ff6b35;
+            transform: translateY(-1px);
+        }
+
+        .header-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        /* CHANGE: Fixed mobile black gap by removing margin-top and using calc height,
+           also added slight button margin, larger scroll indicator */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 70px); /* Adjust for header height, no margin-top gap */
+            margin-top: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0f0f0f;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(160deg, #0f0f0f 0%, #1a1a1a 40%, #0f0f0f 70%, #1c1410 100%);
+            z-index: -1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 20% 50%, rgba(255, 107, 53, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 75% 30%, rgba(255, 107, 53, 0.07) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(255, 107, 53, 0.05) 0%, transparent 40%);
+            animation: floatGlow 7s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes floatGlow {
+            0%, 100% { transform: translate(0, 0); }
+            33% { transform: translate(25px, -15px); }
+            66% { transform: translate(-15px, 10px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: #fff;
+            z-index: 10;
+            padding: 40px;
+            animation: fadeInUp 1s ease-out;
+            max-width: 900px;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h2 {
+            font-size: 72px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            text-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero .subtitle {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #ff6b35;
+            text-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            letter-spacing: 2px;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            font-weight: 400;
+            color: #b0b0b0;
+            max-width: 650px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        /* CHANGE: Moved button down slightly with margin-top */
+        .hero-cta {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #ff6b35;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 800;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid #ff6b35;
+            box-shadow: 0 10px 40px rgba(255, 107, 53, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 15px; /* ADDED: slight downward shift */
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.5);
+            background: transparent;
+            color: #ff6b35;
+        }
+
+        /* CHANGE: Scroll indicator bigger (28px) and higher (bottom 20px) */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: #ff6b35;
+            font-size: 28px;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* CHANGE: Ticker section taller, font bigger */
+        .ticker-section {
+            background: #ff6b35;
+            padding: 20px 0; /* increased from 14px */
+            border-top: 1px solid rgba(255,255,255,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-section::before,
+        .ticker-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 60px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .ticker-section::before {
+            left: 0;
+            background: linear-gradient(to right, #ff6b35 0%, transparent 100%);
+        }
+
+        .ticker-section::after {
+            right: 0;
+            background: linear-gradient(to left, #ff6b35 0%, transparent 100%);
+        }
+
+        .ticker-track {
+            display: flex;
+            gap: 24px;
+            animation: tickerScroll 15s linear infinite;
+            width: fit-content;
+            white-space: nowrap;
+            padding: 0 20px;
+            color: #0f0f0f;
+        }
+
+        .ticker-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes tickerScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+            font-size: 15px; /* increased from 12px */
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #0f0f0f;
+        }
+
+        .ticker-item .ticker-accent {
+            color: #0f0f0f;
+            font-size: 14px;
+        }
+
+        .ticker-item .ticker-stat {
+            color: #0f0f0f;
+            font-size: 16px; /* increased */
+            font-weight: 800;
+        }
+
+        .ticker-divider {
+            color: #0f0f0f;
+            font-size: 10px; /* slightly bigger */
+            flex-shrink: 0;
+            opacity: 0.6;
+        }
+
+        /* Bio Section */
+        .bio-section {
+            padding: 100px 50px 60px 50px; /* decreased bottom padding to bring contact closer */
+            background: #0f0f0f;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .bio-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            background: #1a1a1a;
+            display: block;
+        }
+
+        .bio-content h3 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .bio-content p {
+            font-size: 16px;
+            color: #b0b0b0;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .bio-highlight {
+            background: #1a1a1a;
+            padding: 20px;
+            border-left: 4px solid #ff6b35;
+            margin: 30px 0;
+            font-style: italic;
+            color: #999;
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* Contact CTA Section */
+        /* CHANGE: Reduced top padding to bring closer to bio, reduced bottom padding */
+        .contact-cta {
+            position: relative;         
+            overflow: hidden;             
+            padding: 60px 50px 60px; /* was 100px 50px 80px */
+            background: #0f0f0f;
+            text-align: center;
+        }
+
+        .contact-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 50% 40%, rgba(255, 107, 53, 0.10) 0%, transparent 60%),
+                radial-gradient(ellipse at 30% 70%, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 1;                   
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .limited-badge {
+            display: inline-block;
+            color: #ff6b35;
+            border: 2px solid #ff6b35;
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.3); }
+            50% { transform: scale(1.04); box-shadow: 0 0 0 12px rgba(255, 107, 53, 0); }
+        }
+
+        .contact-cta h3 {
+            font-size: 46px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .contact-cta .sub-heading {
+            font-size: 18px;
+            color: #b0b0b0;
+            margin-bottom: 35px;
+        }
+
+        .email-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #ff6b35;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 800;
+            border-radius: 50px;
+            border: 2px solid #ff6b35;
+            box-shadow: 0 10px 40px rgba(255, 107, 53, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .email-button:hover {
+            background: transparent;
+            color: #ff6b35;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.5);
+        }
+
+        /* CHANGE: Email note redesigned to stand out */
+        .email-note {
+            font-size: 18px;
+            font-weight: 800;
+            color: #ff6b35;
+            background: rgba(255, 107, 53, 0.12);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 40px;
+            letter-spacing: 1px;
+            margin-top: 5px;
+            margin-bottom: 12px;
+            backdrop-filter: blur(4px);
+            font-family: monospace;
+        }
+
+        .inquiry-note {
+            font-size: 13px;
+            color: #888;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        /* Carousel Section */
+        /* CHANGE: Reduced top padding to bring closer to contact section */
+        .carousel-section {
+            padding: 60px 50px 100px 50px; /* was 100px 50px */
+            background: #0f0f0f;
+            text-align: center;
+        }
+
+        .carousel-section h3 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 60px;
+            color: #fff;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            height: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 107, 53, 0.12);
+        }
+
+        .carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-color: #0a0a0a;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            pointer-events: none;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .carousel-dot.active {
+            background: #ff6b35;
+            border-color: #ff6b35;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        .carousel-dot:hover {
+            background: #ff6b35;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(15, 15, 15, 0.75);
+            color: #ff6b35;
+            border: 1px solid rgba(255, 107, 53, 0.4);
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .carousel-arrow:hover {
+            background: #ff6b35;
+            color: #fff;
+            transform: translateY(-50%) scale(1.1);
+            border-color: #ff6b35;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.35);
+        }
+
+        .carousel-arrow.prev {
+            left: 20px;
+        }
+        .carousel-arrow.next {
+            right: 20px;
+        }
+
+        /* Instagram Section */
+        /* CHANGE: Reduced top and bottom padding evenly */
+        .instagram-section {
+            position: relative;
+            padding: 70px 50px 80px; /* was 110px 50px 120px */
+            text-align: center;
+            overflow: hidden;
+            background: #0f0f0f;         
+        }
+
+        .instagram-content {
+            position: relative;
+            z-index: 10;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .instagram-content h3 {
+            font-size: 46px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .instagram-content p {
+            font-size: 18px;
+            color: #b0b0b0;
+            margin-bottom: 35px;
+            line-height: 1.8;
+        }
+
+        .instagram-button {
+            display: inline-block;
+            padding: 20px 60px;
+            background: #ff6b35;
+            color: #fff;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 800;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid #ff6b35;
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.25);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .instagram-button:hover {
+            background: transparent;
+            color: #ff6b35;
+            transform: translateY(-5px);
+            box-shadow: 0 25px 60px rgba(255, 107, 53, 0.35);
+        }
+
+        .dm-subtext {
+            margin-top: 22px;
+            font-size: 14px;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Footer */
+        /* CHANGE: Reduced padding top and bottom evenly */
+        footer {
+            background: #0a0a0a;
+            color: #b0b0b0;
+            text-align: center;
+            padding: 24px 40px; /* was 40px */
+            font-size: 13px;
+            border-top: 1px solid rgba(255, 107, 53, 0.25);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 18px;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            header h1 {
+                font-size: 20px;
+                letter-spacing: 0;
+            }
+
+            .header-nav {
+                gap: 10px;
+            }
+
+            .header-nav a {
+                font-size: 13px;
+                padding: 6px 0;
+                letter-spacing: 0.5px;
+            }
+
+            /* Adjust hero height on mobile to avoid any gap */
+            .hero {
+                height: calc(100vh - 70px); /* consistent */
+                padding: 0;
+            }
+
+            .hero h2 {
+                font-size: 42px;
+            }
+
+            .hero .subtitle {
+                font-size: 18px;
+                letter-spacing: 1px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+                margin-bottom: 25px;
+            }
+
+            .hero-cta {
+                padding: 16px 40px;
+                font-size: 14px;
+                margin-top: 10px;
+            }
+
+            .scroll-indicator {
+                font-size: 26px;
+                bottom: 25px;
+            }
+
+            .ticker-section {
+                padding: 16px 0;
+            }
+            .ticker-item {
+                font-size: 12px;
+            }
+            .ticker-item .ticker-stat {
+                font-size: 13px;
+            }
+            .ticker-divider {
+                font-size: 8px;
+            }
+
+            .bio-section {
+                grid-template-columns: 1fr;
+                padding: 60px 20px 40px 20px;
+                gap: 40px;
+            }
+
+            .bio-image {
+                height: 300px;
+            }
+
+            .bio-content h3 {
+                font-size: 28px;
+            }
+
+            .contact-cta {
+                padding: 50px 20px 50px;
+            }
+
+            .contact-cta h3 {
+                font-size: 32px;
+            }
+
+            .contact-cta .sub-heading {
+                font-size: 16px;
+            }
+
+            .email-button {
+                padding: 16px 40px;
+                font-size: 14px;
+            }
+            .email-note {
+                font-size: 16px;
+                padding: 6px 16px;
+            }
+
+            .carousel-section {
+                padding: 50px 20px 70px 20px;
+            }
+
+            .carousel-section h3 {
+                font-size: 32px;
+            }
+
+            .carousel-container {
+                height: 380px;
+            }
+
+            .carousel-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            .carousel-arrow.prev {
+                left: 10px;
+            }
+            .carousel-arrow.next {
+                right: 10px;
+            }
+
+            .instagram-section {
+                padding: 50px 20px 60px;
+            }
+
+            .instagram-content h3 {
+                font-size: 32px;
+            }
+
+            .instagram-content p {
+                font-size: 16px;
+            }
+
+            .instagram-button {
+                padding: 16px 40px;
+                font-size: 14px;
+            }
+
+            .dm-subtext {
+                font-size: 13px;
+            }
+            footer {
+                padding: 18px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 18px;
+            }
+            .header-nav a {
+                font-size: 11px;
+                padding: 4px 0;
+            }
+            .hero h2 {
+                font-size: 34px;
+            }
+            .hero .subtitle {
+                font-size: 15px;
+            }
+            .carousel-container {
+                height: 260px;
+            }
+            .contact-cta h3 {
+                font-size: 26px;
+            }
+            .instagram-content h3 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>🎸 NLS Media</h1>
+        <nav class="header-nav">
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#work">Work</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>THE ENERGY.<br>THE PASSION.<br>THE MOMENT.</h2>
+            <div class="subtitle"> Premium Concert & Event Photography</div>
+            <a href="#work" class="hero-cta">SEE THE WORK</a>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- Horizontal Scrolling Ticker (compact) -->
+    <section class="ticker-section">
+        <div class="ticker-track" id="tickerTrack">
+            <span class="ticker-item">Musikfest (Bethlehem, PA)</span>
+            <span class="ticker-divider">◆</span>
+            <span class="ticker-item">Summerfest (Milwaukee, WI)</span>
+            <span class="ticker-divider">◆</span>
+            <span class="ticker-item"> Bonnaroo (Manchester, TN)</span>
+            <span class="ticker-divider">◆</span>
+            <span class="ticker-item"> Lollapalooza (Chicago, IL)</span>
+            <span class="ticker-divider">◆</span>
+            <span class="ticker-item">Governors Ball (New York, NY)</span>
+            <span class="ticker-divider">◆</span>
+            <span class="ticker-item"> Electric Forest (Rothbury, MI)</span>
+            <span class="ticker-divider">◆</span>
+            <span class="ticker-item">Louder Than Life (Louisville, KY)</span>
+            <span class="ticker-divider">◆</span>
+            <span class="ticker-item">Lost Lands (Thornville, OH)</span>
+            <span class="ticker-divider">◆</span>
+            <span class="ticker-item"> Rockville (Daytona Beach, FL)</span>
+            <span class="ticker-divider">◆</span>
+            <span class="ticker-item"> Shaky Knees (Atlanta, GA)</span>
+            <span class="ticker-divider">◆</span>
+        </div>
+    </section>
+
+    <!-- Bio Section -->
+    <section class="bio-section" id="about">
+        <img class="bio-image" src="bio-portrait.png" alt="NLS Media photographer at a live concert event" width="1200" height="800" loading="lazy">
+        <div class="bio-content">
+            <h3>BEYOND THE PIT.</h3>
+            <p>I don't just photograph concerts. I live them. With roots in the music scene and a camera in my hands since 2012, I've spent thousands of hours capturing the moments that define live performance.</p>
+            <div class="bio-highlight">
+                "Every shot is a conversation between me, the artist, and the audience. It's about freezing the moment where the energy becomes tangible."
+            </div>
+            <p>From festival crowds to intimate venues, from international acts to rising stars, I've learned that the best concert photos aren't just technically perfect—they're emotionally true. They make you feel what it was like to be there.</p>
+            <p>My work has been featured in music publications, used by major venues for promotional campaigns, and trusted by artists worldwide. But what matters most? When someone sees their photo and says, "Yes. That's exactly how it felt."</p>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-cta" id="contact">
+        <div class="contact-content">
+            <div class="limited-badge">✦ AVAILABLE WORLDWIDE ✦</div>
+            <h3>Ready to Capture Your Next Moment?</h3>
+            <p class="sub-heading">Your next concert, festival, or exclusive event deserves photography that captures the magnitude of the moment. Reach out today, and let's discuss how we can elevate your visual storytelling.</p>
+            <a href="mailto:hello@nlsmedia.com" class="email-button">Email Inquiry</a>
+            <!-- CHANGE: Redesigned email note below button, stands out more -->
+            <p class="email-note">✉ CONTACT@NLSMEDIA.COM</p>
+            <p class="inquiry-note">Serious inquiries only.</p>
+        </div>
+    </section>
+
+    <!-- Image Carousel Section -->
+    <section class="carousel-section" id="work">
+        <h3>Our Work Speaks</h3>
+        <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-slide"><img src="slide1.png" alt="Concert crowd reaching toward stage" width="1200" height="800" loading="lazy"></div>
+                <div class="carousel-slide"><img src="slide2.webp" alt="Guitarist performing under dramatic lighting" width="1200" height="800" loading="lazy"></div>
+                <div class="carousel-slide"><img src="slide3.png" alt="Drummer mid-performance intense action" width="1200" height="800" loading="lazy"></div>
+                <div class="carousel-slide"><img src="slide4.png" alt="Vocalist connecting with audience" width="1200" height="800" loading="lazy"></div>
+                <div class="carousel-slide"><img src="slide5.jpg" alt="Festival main stage with pyro effects" width="1200" height="800" loading="lazy"></div>
+                <div class="carousel-slide"><img src="slide6.jpg" alt="Crowd surfing moment at rock concert" width="1200" height="800" loading="lazy"></div>
+                <div class="carousel-slide"><img src="slide7.jpg" alt="Artist silhouette against concert lights" width="1200" height="800" loading="lazy"></div>
+                <div class="carousel-slide"><img src="slide8.jpg" alt="Intimate venue performance" width="1200" height="800" loading="lazy"></div>
+                <div class="carousel-slide"><img src="slide9.jpg" alt="Electronic music festival atmosphere" width="1200" height="800" loading="lazy"></div>
+                <div class="carousel-slide"><img src="slide10.jpg" alt="Band group shot on stage" width="1200" height="800" loading="lazy"></div>
+            </div>
+            <div class="carousel-controls" id="carouselDots"></div>
+            <button class="carousel-arrow prev" id="prevBtn">‹</button>
+            <button class="carousel-arrow next" id="nextBtn">›</button>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram-section" id="instagram">
+        <div class="instagram-content">
+            <h3>See Our Complete Portfolio</h3>
+            <p>Follow us on Instagram to see hundreds of stunning concert photos. Fresh content daily. This is where the magic lives.</p>
+            <a href="https://www.instagram.com/nlsmedia" target="_blank" class="instagram-button">FOLLOW @NLSMEDIA →</a>
+            <p class="dm-subtext">Or DM directly for bookings and inquiries.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 NLS Media | Premium Concert & Live Event Photography | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // ---------- ANTI-COPY / ANTI-INSPECT PROTECTION ----------
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12') {
+                e.preventDefault();
+                return false;
+            }
+            if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
+                e.preventDefault();
+                return false;
+            }
+            if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'J' || e.key === 'j')) {
+                e.preventDefault();
+                return false;
+            }
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+                e.preventDefault();
+                return false;
+            }
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        window.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // ---------- CAROUSEL LOGIC ----------
+        const carouselTrack = document.getElementById('carouselTrack');
+        const carouselDots = document.getElementById('carouselDots');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        const slides = carouselTrack.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+        let currentIndex = 0;
+        let autoLoopInterval;
+
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
+            dot.addEventListener('click', () => goToSlide(i));
+            carouselDots.appendChild(dot);
+        }
+
+        const dots = carouselDots.querySelectorAll('.carousel-dot');
+
+        function updateCarousel() {
+            carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+            resetAutoLoop();
+        }
+
+        function resetAutoLoop() {
+            clearInterval(autoLoopInterval);
+            autoLoopInterval = setInterval(nextSlide, 5000);
+        }
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoLoop();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoLoop();
+        });
+
+        autoLoopInterval = setInterval(nextSlide, 5000);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+```
