@@ -104,18 +104,16 @@
         }
 
         /* Hero Section */
-        /* CHANGE: Fixed mobile black gap by removing margin-top and using calc height,
-           also added slight button margin, larger scroll indicator */
+        /* CHANGE: Restored original background and gradients. Fixed mobile gap. */
         .hero {
             position: relative;
             width: 100%;
-            height: calc(100vh - 70px); /* Adjust for header height, no margin-top gap */
-            margin-top: 0;
+            height: 100vh;
+            margin-top: 60px; /* restored to avoid gap and keep original background */
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #0f0f0f;
         }
 
         .hero::before {
@@ -191,7 +189,7 @@
             text-shadow: 0 2px 8px rgba(0,0,0,0.5);
         }
 
-        /* CHANGE: Moved button down slightly with margin-top */
+        /* CHANGE: Button moved down slightly */
         .hero-cta {
             display: inline-block;
             padding: 18px 50px;
@@ -207,7 +205,7 @@
             box-shadow: 0 10px 40px rgba(255, 107, 53, 0.3);
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-top: 15px; /* ADDED: slight downward shift */
+            margin-top: 15px;
         }
 
         .hero-cta:hover {
@@ -217,10 +215,10 @@
             color: #ff6b35;
         }
 
-        /* CHANGE: Scroll indicator bigger (28px) and higher (bottom 20px) */
+        /* CHANGE: Scroll indicator bigger and slightly higher */
         .scroll-indicator {
             position: absolute;
-            bottom: 20px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
@@ -235,10 +233,10 @@
             50% { transform: translateX(-50%) translateY(-10px); }
         }
 
-        /* CHANGE: Ticker section taller, font bigger */
+        /* CHANGE: Ticker taller, bigger font */
         .ticker-section {
             background: #ff6b35;
-            padding: 20px 0; /* increased from 14px */
+            padding: 20px 0;
             border-top: 1px solid rgba(255,255,255,0.2);
             border-bottom: 1px solid rgba(255,255,255,0.2);
             overflow: hidden;
@@ -290,7 +288,7 @@
             align-items: center;
             gap: 6px;
             flex-shrink: 0;
-            font-size: 15px; /* increased from 12px */
+            font-size: 15px;
             font-weight: 800;
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -304,20 +302,20 @@
 
         .ticker-item .ticker-stat {
             color: #0f0f0f;
-            font-size: 16px; /* increased */
+            font-size: 16px;
             font-weight: 800;
         }
 
         .ticker-divider {
             color: #0f0f0f;
-            font-size: 10px; /* slightly bigger */
+            font-size: 10px;
             flex-shrink: 0;
             opacity: 0.6;
         }
 
         /* Bio Section */
         .bio-section {
-            padding: 100px 50px 60px 50px; /* decreased bottom padding to bring contact closer */
+            padding: 100px 50px 60px 50px;
             background: #0f0f0f;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -361,12 +359,11 @@
             border-radius: 0 6px 6px 0;
         }
 
-        /* Contact CTA Section */
-        /* CHANGE: Reduced top padding to bring closer to bio, reduced bottom padding */
+        /* Contact CTA Section - restored original background and spacing slightly reduced */
         .contact-cta {
             position: relative;         
             overflow: hidden;             
-            padding: 60px 50px 60px; /* was 100px 50px 80px */
+            padding: 70px 50px 70px; /* slightly reduced from original 100px, but background intact */
             background: #0f0f0f;
             text-align: center;
         }
@@ -446,20 +443,16 @@
             box-shadow: 0 20px 60px rgba(255, 107, 53, 0.5);
         }
 
-        /* CHANGE: Email note redesigned to stand out */
+        /* CHANGE: Reverted email note to original clean style */
         .email-note {
-            font-size: 18px;
-            font-weight: 800;
-            color: #ff6b35;
-            background: rgba(255, 107, 53, 0.12);
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 40px;
-            letter-spacing: 1px;
+            font-size: 13px;
+            color: #888;
+            font-weight: bold;
             margin-top: 5px;
-            margin-bottom: 12px;
-            backdrop-filter: blur(4px);
-            font-family: monospace;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            font-family: inherit;
         }
 
         .inquiry-note {
@@ -469,10 +462,9 @@
             margin-top: 5px;
         }
 
-        /* Carousel Section */
-        /* CHANGE: Reduced top padding to bring closer to contact section */
+        /* Carousel Section - reduced top padding to bring closer to contact */
         .carousel-section {
-            padding: 60px 50px 100px 50px; /* was 100px 50px */
+            padding: 60px 50px 100px 50px;
             background: #0f0f0f;
             text-align: center;
         }
@@ -585,11 +577,10 @@
             right: 20px;
         }
 
-        /* Instagram Section */
-        /* CHANGE: Reduced top and bottom padding evenly */
+        /* Instagram Section - reduced padding */
         .instagram-section {
             position: relative;
-            padding: 70px 50px 80px; /* was 110px 50px 120px */
+            padding: 70px 50px 80px;
             text-align: center;
             overflow: hidden;
             background: #0f0f0f;         
@@ -647,13 +638,12 @@
             font-style: italic;
         }
 
-        /* Footer */
-        /* CHANGE: Reduced padding top and bottom evenly */
+        /* Footer - reduced padding */
         footer {
             background: #0a0a0a;
             color: #b0b0b0;
             text-align: center;
-            padding: 24px 40px; /* was 40px */
+            padding: 24px 40px;
             font-size: 13px;
             border-top: 1px solid rgba(255, 107, 53, 0.25);
         }
@@ -681,10 +671,10 @@
                 letter-spacing: 0.5px;
             }
 
-            /* Adjust hero height on mobile to avoid any gap */
+            /* CHANGE: On mobile, reduce hero height so ticker is slightly visible when loading */
             .hero {
-                height: calc(100vh - 70px); /* consistent */
-                padding: 0;
+                height: 85vh; /* shorter, leaves ticker peeking */
+                margin-top: 60px; /* keep consistent */
             }
 
             .hero h2 {
@@ -756,8 +746,7 @@
                 font-size: 14px;
             }
             .email-note {
-                font-size: 16px;
-                padding: 6px 16px;
+                font-size: 12px;
             }
 
             .carousel-section {
@@ -856,7 +845,7 @@
         <div class="scroll-indicator">↓</div>
     </section>
 
-    <!-- Horizontal Scrolling Ticker (compact) -->
+    <!-- Horizontal Scrolling Ticker -->
     <section class="ticker-section">
         <div class="ticker-track" id="tickerTrack">
             <span class="ticker-item">Musikfest (Bethlehem, PA)</span>
@@ -903,8 +892,8 @@
             <h3>Ready to Capture Your Next Moment?</h3>
             <p class="sub-heading">Your next concert, festival, or exclusive event deserves photography that captures the magnitude of the moment. Reach out today, and let's discuss how we can elevate your visual storytelling.</p>
             <a href="mailto:hello@nlsmedia.com" class="email-button">Email Inquiry</a>
-            <!-- CHANGE: Redesigned email note below button, stands out more -->
-            <p class="email-note">✉ CONTACT@NLSMEDIA.COM</p>
+            <!-- CHANGE: Email note reverted to original clean style -->
+            <p class="email-note">CONTACT@NLSMEDIA.COM</p>
             <p class="inquiry-note">Serious inquiries only.</p>
         </div>
     </section>
@@ -947,7 +936,7 @@
     </footer>
 
     <script>
-        // ---------- ANTI-COPY / ANTI-INSPECT PROTECTION ----------
+        // Anti-copy / inspect protection
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
             return false;
@@ -983,7 +972,7 @@
             }
         });
 
-        // ---------- CAROUSEL LOGIC ----------
+        // Carousel logic
         const carouselTrack = document.getElementById('carouselTrack');
         const carouselDots = document.getElementById('carouselDots');
         const prevBtn = document.getElementById('prevBtn');
@@ -1043,6 +1032,7 @@
 
         autoLoopInterval = setInterval(nextSlide, 5000);
 
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
